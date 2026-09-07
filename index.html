@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parcial: Dinayker López</title>
+    <style>
+        /* Estilos para aislar y centrar únicamente la simulación gráfica */
+        .wokwi-container {
+            width: 100%;
+            max-width: 700px;
+            height: 500px;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            background-color: #e6e6e6;
+        }
+
+        .wokwi-container iframe {
+            width: 200%; /* Duplica el ancho para empujar el código fuera de la vista */
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: -100%; /* Desplaza la mitad izquierda (editor de código) hacia afuera */
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- CONTENEDOR CON RECORTE DE INTERFAZ -->
+    <div class="wokwi-container">
+        <iframe 
+            src="https://wokwi.com/projects/473883644914402305/embed?no-code=1" 
+            allowfullscreen>
+        </iframe>
+    </div>
+
+</body>
+</html>
