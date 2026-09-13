@@ -3,25 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Simulador Display 7 Segmentos - Wokwi Integrado</title>
+  <title>Simulador Display 7 Segmentos - MQTT</title>
   <link rel="stylesheet" href="src/style/style.css">
+  <!-- Cliente MQTT Paho JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js"></script>
 </head>
 <body>
 
   <div class="card">
-    <h2>Simulador de Display de 7 Segmentos</h2>
+    <h2>Simulador Display 7 Segmentos (MQTT)</h2>
 
-    <!-- SIMULADOR WOKWI EMBEBIDO (Muestra Display + ESP32 en vivo) -->
-    <div class="wokwi-frame-container">
-      <iframe 
-        id="wokwi-iframe"
-        src="https://wokwi.com/projects/473883644914402305" 
-        frameborder="0" 
-        scrolling="no">
-      </iframe>
+    <!-- DISPLAY 7 SEGMENTOS SVG -->
+    <div class="display-container">
+      <svg class="display-svg" viewBox="0 0 57 80" xmlns="http://www.w3.org/2000/svg">
+        <g id="display-segments">
+          <polygon id="seg-a" points="10,8 14,4 42,4 46,8 42,12 14,12" />
+          <polygon id="seg-b" points="48,10 52,14 52,38 48,42 44,38 44,14" />
+          <polygon id="seg-c" points="48,44 52,48 52,72 48,76 44,72 44,48" />
+          <polygon id="seg-d" points="10,78 14,74 42,74 46,78 42,82 14,82" transform="translate(0, -4)" />
+          <polygon id="seg-e" points="8,44 12,48 12,72 8,76 4,72 4,48" />
+          <polygon id="seg-f" points="8,10 12,14 12,38 8,42 4,38 4,14" />
+          <polygon id="seg-g" points="10,43 14,39 42,39 46,43 42,47 14,47" />
+        </g>
+      </svg>
     </div>
 
-    <!-- BOTONES RADIALES EN ORDEN (1, 2, 3, 4) -->
+    <!-- BOTONES RADIALES (1, 2, 3, 4) -->
     <div class="controls-container">
       <p>Selecciona los bits de entrada:</p>
       <div class="buttons-grid">
@@ -45,8 +52,9 @@
     </div>
 
     <div class="info-panel">
-      <p>Valor Binario: <strong id="lbl-binario">0000</strong></p>
-      <p>Valor Decimal: <strong id="lbl-decimal">0</strong></p>
+      <p>Binario: <strong id="lbl-binario">0000</strong></p>
+      <p>Decimal: <strong id="lbl-decimal">0</strong></p>
+      <p>Estado: <strong id="lbl-status" style="color: #ffaa00;">Conectando...</strong></p>
     </div>
   </div>
 
