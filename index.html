@@ -2,8 +2,8 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="Parcial" content="width=device-width, initial-scale=1.0">
-  <title>Parcial 1: Dinayker Lopez, Omair Rangel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulador Display 7 Segmentos - Wokwi Integrado</title>
   <link rel="stylesheet" href="src/style/style.css">
 </head>
 <body>
@@ -11,17 +11,14 @@
   <div class="card">
     <h2>Simulador de Display de 7 Segmentos</h2>
 
-    <!-- DISPLAY DE 7 SEGMENTOS -->
-    <div class="display-container">
-      <div class="display">
-        <div class="segment a" id="seg-a"></div>
-        <div class="segment b" id="seg-b"></div>
-        <div class="segment c" id="seg-c"></div>
-        <div class="segment d" id="seg-d"></div>
-        <div class="segment e" id="seg-e"></div>
-        <div class="segment f" id="seg-f"></div>
-        <div class="segment g" id="seg-g"></div>
-      </div>
+    <!-- SIMULADOR WOKWI EMBEBIDO (Muestra Display + ESP32 en vivo) -->
+    <div class="wokwi-frame-container">
+      <iframe 
+        id="wokwi-iframe"
+        src="https://wokwi.com/projects/473883644914402305" 
+        frameborder="0" 
+        scrolling="no">
+      </iframe>
     </div>
 
     <!-- BOTONES RADIALES EN ORDEN (1, 2, 3, 4) -->
@@ -29,19 +26,19 @@
       <p>Selecciona los bits de entrada:</p>
       <div class="buttons-grid">
         <div class="btn-group">
-          <button class="radial-btn" id="btn-1" data-bit="0" onclick="toggleBit(0)"></button>
+          <button class="radial-btn" id="btn-1" onclick="toggleBit(0)"></button>
           <span>1</span>
         </div>
         <div class="btn-group">
-          <button class="radial-btn" id="btn-2" data-bit="1" onclick="toggleBit(1)"></button>
+          <button class="radial-btn" id="btn-2" onclick="toggleBit(1)"></button>
           <span>2</span>
         </div>
         <div class="btn-group">
-          <button class="radial-btn" id="btn-3" data-bit="2" onclick="toggleBit(2)"></button>
+          <button class="radial-btn" id="btn-3" onclick="toggleBit(2)"></button>
           <span>3</span>
         </div>
         <div class="btn-group">
-          <button class="radial-btn" id="btn-4" data-bit="3" onclick="toggleBit(3)"></button>
+          <button class="radial-btn" id="btn-4" onclick="toggleBit(3)"></button>
           <span>4</span>
         </div>
       </div>
